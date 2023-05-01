@@ -15,7 +15,7 @@ By the end of this book, you will be using BERT and its variants to perform seve
 
 ### Goal
 
-Even if I can't do it every day, I'm going to keep recording. Even 30 minutes a day!!!
+**Even if I can't do it every day, I'm going to keep recording. Even 30 minutes a day!!!**
 
 ### Composition of the book
 
