@@ -13,6 +13,10 @@ It also explains M-BERT, XLM, and XLM-R in detail. Next, we learn about sentence
 
 By the end of this book, you will be using BERT and its variants to perform several natural language processing tasks.
 
+### Goal
+
+Even if I can't do it every day, I'm going to keep recording. Even 30 minutes a day!!!
+
 ### Composition of the book
 
 [PART I BERT 시작하기]
