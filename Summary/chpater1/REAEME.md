@@ -147,31 +147,43 @@ Encoder와 동일
 ### 연습문제
 
 1. 셀프 어텐션의 전체 단계를 설명하라.
+   
 sol)
+
 - 쿼리 행렬과 키 행렬간의 내적을 계산하고 유사도를 구하고 root(차원 크기)값으로 나눈다.
 - 스코어 행렬에 대해 softmax를 적용해 정규화를 진행한다
 - 마지막으로 score matrix에 value matrix를 곱해 attention matrix를 구한다.
   
 2. 스케일 닷 프로덕트 어텐션을 정의하라.
+   
 sol)
+
 - self attention의 메커니즘을 scaled-dot product attention이라고도 한다. 그 이유는 쿼리와 키 벡터의 내적을 먼저 계산하고, 값에 대한 스케일링을 적용하기 때문이다.
    
 3. 쿼리, 키, 밸류 행렬은 어떻게 생성하는가?
+   
 sol)
+
 -  쿼리, 키, 밸류 행렬을 생성하기 위해 Wq,Wk,Wv의 새로운 matrix를 사용한다. 입력 행렬의 W matrix를 각각 곱해 생성한다.
 
 4. 위치 인코딩이 필요한 이유는 무엇인가?
+   
 sol)
+
 - 트랜스포머는 병렬 형태로 한 번에 문장이 들어가므로 위치 정보를 파악할 수 없다. 따라서 필요하다.
 
 5. 디코더의 서브레이어에는 무엇이 있는가?
+   
 sol)
+
 - masked multi-head attention
 - Encoder-Decoder multi-head attention
 - FFN
   
 6. 디코더의 인코더-디코더 어텐션 레이어의 입력은 무엇인가?
+   
 sol)
+
 - 인코더의 마지막 레이어에서 오는 representation vector(K,V matrix)와 이전 masked_multi-head attention layer의 출력값(Q matrix)
 
 
