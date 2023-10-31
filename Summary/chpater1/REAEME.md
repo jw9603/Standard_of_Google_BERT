@@ -29,7 +29,8 @@ Ex) A dog ate the food because it was hungry.
 위와 같은 문장이 주어질 경우 모델은 어떻게 알 수 있을까? 이때 셀프 어텐션이 필요하다.
 이 문장이 입력되었을 때, 모델은 가장 먼저 단어 'A'의 representation을, 그다음으로 단어 'dog'의 표현을 계산한 다음 'ate'라는 단어의 표현을 계산한다. 각각의 단어를 계산하는 동안 각 단어의 표현들은 문장 안에 있는 다른 모든 단어의 표현과 연결해 단어가 문장 내에서 갖는 의미를 이해한다.
 
-![image](https://github.com/jw9603/Standard_of_Google_BERT/assets/70795645/9d290fe0-a737-4d78-8c87-1d523afc6f79)
+![image](https://github.com/jw9603/Standard_of_Google_BERT/assets/70795645/0b2ee908-dd87-4037-8012-cc43e93baf55)
+
 출처 : https://www.analyticsvidhya.com/blog/2023/07/transformers-encoder-the-crux-of-the-nlp-issues/
 
 
