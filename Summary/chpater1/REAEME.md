@@ -33,4 +33,25 @@ Ex) A dog ate the food because it was hungry.
 
 출처 : https://www.analyticsvidhya.com/blog/2023/07/transformers-encoder-the-crux-of-the-nlp-issues/
 
+셀프 어텐션을 요약하자면 다음과 같다.
+- 단어 그대로 attention을 자기 자신에게 수행한다는 의미
+- 입력 문장 내의 단어들끼리 유사도를 구함
+- 특정 단어와 문장 내에 있는 모든 단어가 어떤 연관이 있는지를 이해하면 좀 더 좋은 표현을 학습하는데 도움이 됨
+- Query, Key, value는 입력 행렬(문장 길이 x 임베딩 차원)로 부터 쿼리 행렬, 키 행렬, 밸류 행렬을 생성한다.
+    - 무작위 초기화 된 가중치 행렬 W^Q, W^K, W^V을 만들고 입력 행렬 X에 곱해서 Q, K, V를 생성. 가중치 행렬들은 학습 과정에서 업데이트 됨.
+- Q와 K의 내적을 구하고 sqrt(d_k)로 나누기 때문에 Scale-dot product attention이라고도 함.
+
+1. 쿼리(Q) 행렬과 키(K^T) 행렬의 내적 연산을 수행
+Q와 K^T간의 내적을 계산하면 유사도를 구할 수 있음
+문장의 각 단어가 다른 모든 단어와 얼마나 유사한지 파악하는데 도움을 줌
+2. QK^T 행렬을 키 벡터 차원(sqrt(d_k))의 제곱근값으로 나누기
+안정적인 경사값을 얻을 수 있음
+3. Softmax 함수로 Normalizing
+2번까지의 값은 unnormalized form
+행 별로 softmax
+softmax 함수로 normalizing하면 전체 합이 1, 각각의 값은 0~1 사이. 확률값으로 이해가능
+score matrix: 각각의 단어가 문장 전체의 단어와 얼마나 연관이 있는지 확률로 알 수 있음
+4. Attention(Z) 행렬 구하기
+Normalized Similarity * V
+Similarity를 Value를 Weight sum!
 
