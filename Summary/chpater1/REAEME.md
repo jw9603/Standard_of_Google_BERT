@@ -42,16 +42,16 @@ Ex) A dog ate the food because it was hungry.
 - Q와 K의 내적을 구하고 sqrt(d_k)로 나누기 때문에 Scale-dot product attention이라고도 함.
 
 1. 쿼리(Q) 행렬과 키(K^T) 행렬의 내적 연산을 수행
-Q와 K^T간의 내적을 계산하면 유사도를 구할 수 있음
-문장의 각 단어가 다른 모든 단어와 얼마나 유사한지 파악하는데 도움을 줌
+- Q와 K^T간의 내적을 계산하면 유사도를 구할 수 있음
+- 문장의 각 단어가 다른 모든 단어와 얼마나 유사한지 파악하는데 도움을 줌
 2. QK^T 행렬을 키 벡터 차원(sqrt(d_k))의 제곱근값으로 나누기
-안정적인 경사값을 얻을 수 있음
+- 안정적인 경사값을 얻을 수 있음
 3. Softmax 함수로 Normalizing
-2번까지의 값은 unnormalized form
-행 별로 softmax
-softmax 함수로 normalizing하면 전체 합이 1, 각각의 값은 0~1 사이. 확률값으로 이해가능
-score matrix: 각각의 단어가 문장 전체의 단어와 얼마나 연관이 있는지 확률로 알 수 있음
+- 2번까지의 값은 unnormalized form
+- 행 별로 softmax
+0 softmax 함수로 normalizing하면 전체 합이 1, 각각의 값은 0~1 사이. 확률값으로 이해가능
+- score matrix: 각각의 단어가 문장 전체의 단어와 얼마나 연관이 있는지 확률로 알 수 있음
 4. Attention(Z) 행렬 구하기
-Normalized Similarity * V
-Similarity를 Value를 Weight sum!
+- Normalized Similarity * V
+- Similarity를 Value를 Weight sum!
 
