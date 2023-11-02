@@ -178,9 +178,53 @@ QA, Natural Language Inference(NLI)처럼 NLP 태스크 중에선 두 문장 사
     -   **GeLU** 활성화 함수 사용: 음수에 대해서도 미분이 가능해 약간의 그래디언트를 전달할 수 있음
 
 
+### 2.5 연습 문제
 
+1. BERT는 다른 임베딩 모델과 어떻게 다른가
+   
+sol)
 
+- BERT는 Bidirectional Encoder Representation from Transformer의 약자로, 구글에서 발표한 모델이다. BERT는 문맥을 고려하지 않는 Word2Vec 임베딩 모델과 달리 Context기반 임베딩 모델이다.
+  
+2. BERT-base 모델과 BERT-large 모델의 차이점은 무엇인가?
+   
+sol)
 
+- BERT-base
+  -     L = 12, A = 12, H = 768
+- BERT-Large
+  -     L = 24, A = 16, H = 1024
+   
+3. 세그먼트 임베딩은 무엇인가?
+   
+sol)
+
+-  segment embedding은 주어진 두 문장을 구별하는 데 사용된다.
+  
+
+4. BERT는 어떻게 사전 학습되는가?
+   
+sol)
+
+- BERT는 MLM과 NSP 두 가지 태스크를 통해 사전 학습 된다.
+
+5. MLM 태스크는 어떻게 동작하는가?
+   
+sol)
+
+- 주어진 입력 문장에서 단어의 15%를 무작위로 마스킹하고 마스킹된 단어를 예측하도록 모델을 학습한다.
+  
+6. 80-10-10% 규칙은 무엇인가?
+   
+sol)
+
+- 80%의 경우 토큰을 **[MASK]** 토큰으로 교체하고, 10%는 토큰의 임의의 토큰으로 바꾼다. 10%의 경우에는 변경하지 않는다.
+
+7. NSP 태스크는 어떻게 동작하는가?
+   
+sol)
+
+- NSP는 Binary Classification이다. IsNext인지 NotNext인지
 
 
 ### References
